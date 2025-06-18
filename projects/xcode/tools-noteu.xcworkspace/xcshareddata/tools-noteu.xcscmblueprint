@@ -1,0 +1,58 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "3663BF64181247E4BF863DFC4CC29F1DA8B512DC",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "0AA49FD05D660B119F1CC07D6EF6A466975A3BFB" : 0,
+    "2A2F382374FD30C484CA73FCF61DE4EFF4438662" : 0,
+    "10FE210E9BFE40E8EDB23D44570FFE0AB5189469" : 9223372036854775807,
+    "3663BF64181247E4BF863DFC4CC29F1DA8B512DC" : 0,
+    "D05D49E65CB9FFFAC66EC34B2C7332EA7F866947" : 0,
+    "34BF6909DDE82BD3A1A2CCDDB34E873AE58D5BF1" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "9AF61B67-2736-4EE0-9660-3AE434556EE9",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "0AA49FD05D660B119F1CC07D6EF6A466975A3BFB" : "lib-auframework-media-src\/",
+    "2A2F382374FD30C484CA73FCF61DE4EFF4438662" : "lib-auframework-src\/",
+    "10FE210E9BFE40E8EDB23D44570FFE0AB5189469" : "..\/..",
+    "3663BF64181247E4BF863DFC4CC29F1DA8B512DC" : "sys-noteu-src\/",
+    "D05D49E65CB9FFFAC66EC34B2C7332EA7F866947" : "lib-auframework-app-src\/",
+    "34BF6909DDE82BD3A1A2CCDDB34E873AE58D5BF1" : "lib-box2d-src\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "tools-noteu",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "projects\/xcode\/tools-noteu.xcworkspace",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/bitbucket.org\/nicaraguabinary\/lib-auframework-media.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "0AA49FD05D660B119F1CC07D6EF6A466975A3BFB"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/bitbucket.org\/nicaraguabinary\/admin-projects-docs.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "10FE210E9BFE40E8EDB23D44570FFE0AB5189469"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/bitbucket.org\/nicaraguabinary\/lib-auframework.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "2A2F382374FD30C484CA73FCF61DE4EFF4438662"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/bitbucket.org\/nicaraguabinary\/lib-box2d.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "34BF6909DDE82BD3A1A2CCDDB34E873AE58D5BF1"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/bitbucket.org\/nicaraguabinary\/tools-noteu.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "3663BF64181247E4BF863DFC4CC29F1DA8B512DC"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/bitbucket.org\/nicaraguabinary\/lib-auframework-app.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "D05D49E65CB9FFFAC66EC34B2C7332EA7F866947"
+    }
+  ]
+}

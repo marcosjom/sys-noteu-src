@@ -1,0 +1,506 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		2C05F31E1ADD97AB00331B09 /* AUEditorAtlas.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2C05F31C1ADD97AB00331B09 /* AUEditorAtlas.cpp */; };
+		2C05F31F1ADD97AB00331B09 /* AUEditorAtlas.h in Headers */ = {isa = PBXBuildFile; fileRef = 2C05F31D1ADD97AB00331B09 /* AUEditorAtlas.h */; };
+		2C05F3231ADEFE3500331B09 /* AUIListImages.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2C05F3211ADEFE3500331B09 /* AUIListImages.cpp */; };
+		2C05F3241ADEFE3500331B09 /* AUIListImages.h in Headers */ = {isa = PBXBuildFile; fileRef = 2C05F3221ADEFE3500331B09 /* AUIListImages.h */; };
+		2C418C5221C323DC000E59BA /* libnbframework-osx.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C418C5121C323DC000E59BA /* libnbframework-osx.a */; };
+		2C69C8801AB9E981003B4694 /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 2C69C87F1AB9E981003B4694 /* AppDelegate.mm */; };
+		2C69C8821AB9E981003B4694 /* main.mm in Sources */ = {isa = PBXBuildFile; fileRef = 2C69C8811AB9E981003B4694 /* main.mm */; };
+		2C69C8841AB9E981003B4694 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2C69C8831AB9E981003B4694 /* Images.xcassets */; };
+		2C69C8871AB9E981003B4694 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2C69C8851AB9E981003B4694 /* MainMenu.xib */; };
+		2C69C8C71AB9F0F9003B4694 /* NoteuCorePrecomp.h in Headers */ = {isa = PBXBuildFile; fileRef = 2C69C8C61AB9F0F9003B4694 /* NoteuCorePrecomp.h */; };
+		2C69C8CF1AB9F1F0003B4694 /* NoteuCoreRegister.h in Headers */ = {isa = PBXBuildFile; fileRef = 2C69C8CE1AB9F1F0003B4694 /* NoteuCoreRegister.h */; };
+		2C69C8D11AB9F226003B4694 /* NoteuCoreRegister.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2C69C8D01AB9F226003B4694 /* NoteuCoreRegister.cpp */; };
+		2C69C8D31AB9F321003B4694 /* tools-noteu-osx-prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = 2C69C8D21AB9F321003B4694 /* tools-noteu-osx-prefix.pch */; };
+		2C69C8D51AB9F730003B4694 /* libbox2d-osx.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C69C8D41AB9F730003B4694 /* libbox2d-osx.a */; };
+		2C69C8D71AB9F73F003B4694 /* libauframework-osx.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C69C8D61AB9F73F003B4694 /* libauframework-osx.a */; };
+		2C69C8D91AB9F743003B4694 /* libauframework-media-osx.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C69C8D81AB9F743003B4694 /* libauframework-media-osx.a */; };
+		2C69C8DB1AB9F746003B4694 /* libauframework-app-osx.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C69C8DA1AB9F746003B4694 /* libauframework-app-osx.a */; };
+		2C69C8DD1AB9F74E003B4694 /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C69C8DC1AB9F74E003B4694 /* OpenAL.framework */; };
+		2C69C8DF1AB9F754003B4694 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C69C8DE1AB9F754003B4694 /* OpenGL.framework */; };
+		2C69C8E11AB9F75A003B4694 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C69C8E01AB9F75A003B4694 /* QuartzCore.framework */; };
+		2C69C8E31AB9F764003B4694 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C69C8E21AB9F764003B4694 /* Cocoa.framework */; };
+		2C7617911ABC79AA004D3E2A /* libtools-noteu-core-osx.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C69C8C11AB9F050003B4694 /* libtools-noteu-core-osx.a */; };
+		2C76179A1ABC8493004D3E2A /* AUEditorMesh.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2C7617981ABC8493004D3E2A /* AUEditorMesh.cpp */; };
+		2C76179B1ABC8493004D3E2A /* AUEditorMesh.h in Headers */ = {isa = PBXBuildFile; fileRef = 2C7617991ABC8493004D3E2A /* AUEditorMesh.h */; };
+		2C7FAD2F1ABA24D200CFD4EA /* AUGLView.mm in Sources */ = {isa = PBXBuildFile; fileRef = 2C7FAD2E1ABA24D200CFD4EA /* AUGLView.mm */; };
+		2CCB9D1A1AEC160600CCA422 /* AUIMenu.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2CCB9D181AEC160600CCA422 /* AUIMenu.cpp */; };
+		2CCB9D1B1AEC160600CCA422 /* AUIMenu.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2CCB9D181AEC160600CCA422 /* AUIMenu.cpp */; };
+		2CCB9D1C1AEC160600CCA422 /* AUIMenu.h in Headers */ = {isa = PBXBuildFile; fileRef = 2CCB9D191AEC160600CCA422 /* AUIMenu.h */; };
+		2CF4675A1AFA78AB001616B0 /* NBAtlasTools.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2CF467581AFA78AB001616B0 /* NBAtlasTools.cpp */; };
+		2CF4675B1AFA78AB001616B0 /* NBAtlasTools.h in Headers */ = {isa = PBXBuildFile; fileRef = 2CF467591AFA78AB001616B0 /* NBAtlasTools.h */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		2C05F31C1ADD97AB00331B09 /* AUEditorAtlas.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = AUEditorAtlas.cpp; path = "../../../src/tools-noteu-core/AUEditorAtlas.cpp"; sourceTree = "<group>"; };
+		2C05F31D1ADD97AB00331B09 /* AUEditorAtlas.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AUEditorAtlas.h; path = "../../../src/tools-noteu-core/AUEditorAtlas.h"; sourceTree = "<group>"; };
+		2C05F3211ADEFE3500331B09 /* AUIListImages.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = AUIListImages.cpp; path = "../../../src/tools-noteu-core/AUIListImages.cpp"; sourceTree = "<group>"; };
+		2C05F3221ADEFE3500331B09 /* AUIListImages.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AUIListImages.h; path = "../../../src/tools-noteu-core/AUIListImages.h"; sourceTree = "<group>"; };
+		2C418C5121C323DC000E59BA /* libnbframework-osx.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = "libnbframework-osx.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2C69C8791AB9E981003B4694 /* tools-noteu-osx.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "tools-noteu-osx.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2C69C87D1AB9E981003B4694 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2C69C87E1AB9E981003B4694 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		2C69C87F1AB9E981003B4694 /* AppDelegate.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = AppDelegate.mm; sourceTree = "<group>"; };
+		2C69C8811AB9E981003B4694 /* main.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = main.mm; sourceTree = "<group>"; };
+		2C69C8831AB9E981003B4694 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		2C69C8861AB9E981003B4694 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		2C69C8C11AB9F050003B4694 /* libtools-noteu-core-osx.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libtools-noteu-core-osx.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2C69C8C61AB9F0F9003B4694 /* NoteuCorePrecomp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NoteuCorePrecomp.h; path = "../../../src/tools-noteu-core/NoteuCorePrecomp.h"; sourceTree = "<group>"; };
+		2C69C8C81AB9F116003B4694 /* NoteuCore.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = NoteuCore.h; path = "../../../src/tools-noteu-core/NoteuCore.h"; sourceTree = "<group>"; };
+		2C69C8CE1AB9F1F0003B4694 /* NoteuCoreRegister.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NoteuCoreRegister.h; path = "../../../src/tools-noteu-core/NoteuCoreRegister.h"; sourceTree = "<group>"; };
+		2C69C8D01AB9F226003B4694 /* NoteuCoreRegister.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = NoteuCoreRegister.cpp; path = "../../../src/tools-noteu-core/NoteuCoreRegister.cpp"; sourceTree = "<group>"; };
+		2C69C8D21AB9F321003B4694 /* tools-noteu-osx-prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "tools-noteu-osx-prefix.pch"; sourceTree = "<group>"; };
+		2C69C8D41AB9F730003B4694 /* libbox2d-osx.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libbox2d-osx.a"; path = "../../../../../lib-box2d/lib-box2d/projects/xcode/lib-box2d/build/Debug/libbox2d-osx.a"; sourceTree = "<group>"; };
+		2C69C8D61AB9F73F003B4694 /* libauframework-osx.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libauframework-osx.a"; path = "../../../../../lib-auframework/lib-auframework/projects/xcode/lib-auframework/build/Debug/libauframework-osx.a"; sourceTree = "<group>"; };
+		2C69C8D81AB9F743003B4694 /* libauframework-media-osx.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libauframework-media-osx.a"; path = "../../../../../lib-auframework-media/lib-auframework-media/projects/xcode/lib-auframework-media/build/Debug/libauframework-media-osx.a"; sourceTree = "<group>"; };
+		2C69C8DA1AB9F746003B4694 /* libauframework-app-osx.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libauframework-app-osx.a"; path = "../../../../../lib-auframework-app/lib-auframework-app/projects/xcode/lib-auframework-app/build/Debug/libauframework-app-osx.a"; sourceTree = "<group>"; };
+		2C69C8DC1AB9F74E003B4694 /* OpenAL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenAL.framework; path = System/Library/Frameworks/OpenAL.framework; sourceTree = SDKROOT; };
+		2C69C8DE1AB9F754003B4694 /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
+		2C69C8E01AB9F75A003B4694 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		2C69C8E21AB9F764003B4694 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		2C7617981ABC8493004D3E2A /* AUEditorMesh.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = AUEditorMesh.cpp; path = "../../../src/tools-noteu-core/AUEditorMesh.cpp"; sourceTree = "<group>"; };
+		2C7617991ABC8493004D3E2A /* AUEditorMesh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AUEditorMesh.h; path = "../../../src/tools-noteu-core/AUEditorMesh.h"; sourceTree = "<group>"; };
+		2C7FAD2D1ABA24D200CFD4EA /* AUGLView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AUGLView.h; sourceTree = "<group>"; };
+		2C7FAD2E1ABA24D200CFD4EA /* AUGLView.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = AUGLView.mm; sourceTree = "<group>"; };
+		2CCB9D181AEC160600CCA422 /* AUIMenu.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = AUIMenu.cpp; path = "../../../src/tools-noteu-core/AUIMenu.cpp"; sourceTree = "<group>"; };
+		2CCB9D191AEC160600CCA422 /* AUIMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AUIMenu.h; path = "../../../src/tools-noteu-core/AUIMenu.h"; sourceTree = "<group>"; };
+		2CF467581AFA78AB001616B0 /* NBAtlasTools.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = NBAtlasTools.cpp; path = "../../../src/tools-noteu-core/NBAtlasTools.cpp"; sourceTree = "<group>"; };
+		2CF467591AFA78AB001616B0 /* NBAtlasTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NBAtlasTools.h; path = "../../../src/tools-noteu-core/NBAtlasTools.h"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		2C69C8761AB9E981003B4694 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2C418C5221C323DC000E59BA /* libnbframework-osx.a in Frameworks */,
+				2C69C8D51AB9F730003B4694 /* libbox2d-osx.a in Frameworks */,
+				2C69C8D71AB9F73F003B4694 /* libauframework-osx.a in Frameworks */,
+				2C69C8D91AB9F743003B4694 /* libauframework-media-osx.a in Frameworks */,
+				2C69C8DB1AB9F746003B4694 /* libauframework-app-osx.a in Frameworks */,
+				2C7617911ABC79AA004D3E2A /* libtools-noteu-core-osx.a in Frameworks */,
+				2C69C8DD1AB9F74E003B4694 /* OpenAL.framework in Frameworks */,
+				2C69C8DF1AB9F754003B4694 /* OpenGL.framework in Frameworks */,
+				2C69C8E11AB9F75A003B4694 /* QuartzCore.framework in Frameworks */,
+				2C69C8E31AB9F764003B4694 /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2C69C8BE1AB9F050003B4694 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		2C05F3201ADEFE1C00331B09 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				2CCB9D191AEC160600CCA422 /* AUIMenu.h */,
+				2CCB9D181AEC160600CCA422 /* AUIMenu.cpp */,
+				2C05F3221ADEFE3500331B09 /* AUIListImages.h */,
+				2C05F3211ADEFE3500331B09 /* AUIListImages.cpp */,
+			);
+			name = Components;
+			sourceTree = "<group>";
+		};
+		2C69C8701AB9E981003B4694 = {
+			isa = PBXGroup;
+			children = (
+				2C69C8C51AB9F06F003B4694 /* tools-noteu-core */,
+				2C69C87B1AB9E981003B4694 /* tools-noteu-osx */,
+				2C69C8E41AB9F789003B4694 /* Frameworks */,
+				2C69C87A1AB9E981003B4694 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		2C69C87A1AB9E981003B4694 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				2C69C8791AB9E981003B4694 /* tools-noteu-osx.app */,
+				2C69C8C11AB9F050003B4694 /* libtools-noteu-core-osx.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		2C69C87B1AB9E981003B4694 /* tools-noteu-osx */ = {
+			isa = PBXGroup;
+			children = (
+				2C7FAD2D1ABA24D200CFD4EA /* AUGLView.h */,
+				2C7FAD2E1ABA24D200CFD4EA /* AUGLView.mm */,
+				2C69C87E1AB9E981003B4694 /* AppDelegate.h */,
+				2C69C87F1AB9E981003B4694 /* AppDelegate.mm */,
+				2C69C8831AB9E981003B4694 /* Images.xcassets */,
+				2C69C8851AB9E981003B4694 /* MainMenu.xib */,
+				2C69C87C1AB9E981003B4694 /* Supporting Files */,
+			);
+			path = "tools-noteu-osx";
+			sourceTree = "<group>";
+		};
+		2C69C87C1AB9E981003B4694 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				2C69C87D1AB9E981003B4694 /* Info.plist */,
+				2C69C8811AB9E981003B4694 /* main.mm */,
+				2C69C8D21AB9F321003B4694 /* tools-noteu-osx-prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		2C69C8C51AB9F06F003B4694 /* tools-noteu-core */ = {
+			isa = PBXGroup;
+			children = (
+				2C7FAD301ABA260900CFD4EA /* Escenes */,
+				2C69C8C61AB9F0F9003B4694 /* NoteuCorePrecomp.h */,
+				2C69C8C81AB9F116003B4694 /* NoteuCore.h */,
+				2C69C8CE1AB9F1F0003B4694 /* NoteuCoreRegister.h */,
+				2C69C8D01AB9F226003B4694 /* NoteuCoreRegister.cpp */,
+			);
+			name = "tools-noteu-core";
+			sourceTree = "<group>";
+		};
+		2C69C8E41AB9F789003B4694 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2C418C5121C323DC000E59BA /* libnbframework-osx.a */,
+				2C69C8E51AB9F792003B4694 /* osx */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		2C69C8E51AB9F792003B4694 /* osx */ = {
+			isa = PBXGroup;
+			children = (
+				2C69C8E21AB9F764003B4694 /* Cocoa.framework */,
+				2C69C8E01AB9F75A003B4694 /* QuartzCore.framework */,
+				2C69C8DE1AB9F754003B4694 /* OpenGL.framework */,
+				2C69C8DC1AB9F74E003B4694 /* OpenAL.framework */,
+				2C69C8DA1AB9F746003B4694 /* libauframework-app-osx.a */,
+				2C69C8D81AB9F743003B4694 /* libauframework-media-osx.a */,
+				2C69C8D61AB9F73F003B4694 /* libauframework-osx.a */,
+				2C69C8D41AB9F730003B4694 /* libbox2d-osx.a */,
+			);
+			name = osx;
+			sourceTree = "<group>";
+		};
+		2C7FAD301ABA260900CFD4EA /* Escenes */ = {
+			isa = PBXGroup;
+			children = (
+				2C05F31D1ADD97AB00331B09 /* AUEditorAtlas.h */,
+				2C05F31C1ADD97AB00331B09 /* AUEditorAtlas.cpp */,
+				2C7617991ABC8493004D3E2A /* AUEditorMesh.h */,
+				2C7617981ABC8493004D3E2A /* AUEditorMesh.cpp */,
+				2CF467591AFA78AB001616B0 /* NBAtlasTools.h */,
+				2CF467581AFA78AB001616B0 /* NBAtlasTools.cpp */,
+				2C05F3201ADEFE1C00331B09 /* Components */,
+			);
+			name = Escenes;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		2C69C8BF1AB9F050003B4694 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2C69C8CF1AB9F1F0003B4694 /* NoteuCoreRegister.h in Headers */,
+				2C05F31F1ADD97AB00331B09 /* AUEditorAtlas.h in Headers */,
+				2CF4675B1AFA78AB001616B0 /* NBAtlasTools.h in Headers */,
+				2C05F3241ADEFE3500331B09 /* AUIListImages.h in Headers */,
+				2C76179B1ABC8493004D3E2A /* AUEditorMesh.h in Headers */,
+				2C69C8D31AB9F321003B4694 /* tools-noteu-osx-prefix.pch in Headers */,
+				2CCB9D1C1AEC160600CCA422 /* AUIMenu.h in Headers */,
+				2C69C8C71AB9F0F9003B4694 /* NoteuCorePrecomp.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		2C69C8781AB9E981003B4694 /* tools-noteu-osx */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2C69C8961AB9E981003B4694 /* Build configuration list for PBXNativeTarget "tools-noteu-osx" */;
+			buildPhases = (
+				2C69C8751AB9E981003B4694 /* Sources */,
+				2C69C8761AB9E981003B4694 /* Frameworks */,
+				2C69C8771AB9E981003B4694 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "tools-noteu-osx";
+			productName = "tools-noteu-osx";
+			productReference = 2C69C8791AB9E981003B4694 /* tools-noteu-osx.app */;
+			productType = "com.apple.product-type.application";
+		};
+		2C69C8C01AB9F050003B4694 /* tools-noteu-core-osx */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2C69C8C21AB9F050003B4694 /* Build configuration list for PBXNativeTarget "tools-noteu-core-osx" */;
+			buildPhases = (
+				2C69C8BD1AB9F050003B4694 /* Sources */,
+				2C69C8BE1AB9F050003B4694 /* Frameworks */,
+				2C69C8BF1AB9F050003B4694 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "tools-noteu-core-osx";
+			productName = "tools-noteu-core-osx";
+			productReference = 2C69C8C11AB9F050003B4694 /* libtools-noteu-core-osx.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		2C69C8711AB9E981003B4694 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0610;
+				ORGANIZATIONNAME = "Nicaragua Binary S.A.";
+				TargetAttributes = {
+					2C69C8781AB9E981003B4694 = {
+						CreatedOnToolsVersion = 6.1.1;
+					};
+					2C69C8C01AB9F050003B4694 = {
+						CreatedOnToolsVersion = 6.1.1;
+					};
+				};
+			};
+			buildConfigurationList = 2C69C8741AB9E981003B4694 /* Build configuration list for PBXProject "tools-noteu" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 2C69C8701AB9E981003B4694;
+			productRefGroup = 2C69C87A1AB9E981003B4694 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				2C69C8781AB9E981003B4694 /* tools-noteu-osx */,
+				2C69C8C01AB9F050003B4694 /* tools-noteu-core-osx */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		2C69C8771AB9E981003B4694 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2C69C8841AB9E981003B4694 /* Images.xcassets in Resources */,
+				2C69C8871AB9E981003B4694 /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		2C69C8751AB9E981003B4694 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2CCB9D1A1AEC160600CCA422 /* AUIMenu.cpp in Sources */,
+				2C69C8821AB9E981003B4694 /* main.mm in Sources */,
+				2C7FAD2F1ABA24D200CFD4EA /* AUGLView.mm in Sources */,
+				2C69C8801AB9E981003B4694 /* AppDelegate.mm in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2C69C8BD1AB9F050003B4694 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2C05F31E1ADD97AB00331B09 /* AUEditorAtlas.cpp in Sources */,
+				2C05F3231ADEFE3500331B09 /* AUIListImages.cpp in Sources */,
+				2C76179A1ABC8493004D3E2A /* AUEditorMesh.cpp in Sources */,
+				2CF4675A1AFA78AB001616B0 /* NBAtlasTools.cpp in Sources */,
+				2C69C8D11AB9F226003B4694 /* NoteuCoreRegister.cpp in Sources */,
+				2CCB9D1B1AEC160600CCA422 /* AUIMenu.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		2C69C8851AB9E981003B4694 /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2C69C8861AB9E981003B4694 /* Base */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		2C69C8941AB9E981003B4694 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = NO;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)/../../../../../sys-auframework/lib-box2d-src/include $(SRCROOT)/../../../../../sys-nbframework/lib-nbframework-src/include $(SRCROOT)/../../../../../sys-auframework/lib-auframework-src/include $(SRCROOT)/../../../../../sys-auframework/lib-auframework-media-src/include $(SRCROOT)/../../../../../sys-auframework/lib-auframework-app-src/include $(SRCROOT)/../../src/tools-noteu-core";
+			};
+			name = Debug;
+		};
+		2C69C8951AB9E981003B4694 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = NO;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)/../../../../../sys-auframework/lib-box2d-src/include $(SRCROOT)/../../../../../sys-nbframework/lib-nbframework-src/include $(SRCROOT)/../../../../../sys-auframework/lib-auframework-src/include $(SRCROOT)/../../../../../sys-auframework/lib-auframework-media-src/include $(SRCROOT)/../../../../../sys-auframework/lib-auframework-app-src/include $(SRCROOT)/../../src/tools-noteu-core";
+			};
+			name = Release;
+		};
+		2C69C8971AB9E981003B4694 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "tools-noteu-osx/tools-noteu-osx-prefix.pch";
+				INFOPLIST_FILE = "tools-noteu-osx/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		2C69C8981AB9E981003B4694 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "tools-noteu-osx/tools-noteu-osx-prefix.pch";
+				INFOPLIST_FILE = "tools-noteu-osx/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		2C69C8C31AB9F050003B4694 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				EXECUTABLE_PREFIX = lib;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		2C69C8C41AB9F050003B4694 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				EXECUTABLE_PREFIX = lib;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2C69C8741AB9E981003B4694 /* Build configuration list for PBXProject "tools-noteu" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2C69C8941AB9E981003B4694 /* Debug */,
+				2C69C8951AB9E981003B4694 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2C69C8961AB9E981003B4694 /* Build configuration list for PBXNativeTarget "tools-noteu-osx" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2C69C8971AB9E981003B4694 /* Debug */,
+				2C69C8981AB9E981003B4694 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2C69C8C21AB9F050003B4694 /* Build configuration list for PBXNativeTarget "tools-noteu-core-osx" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2C69C8C31AB9F050003B4694 /* Debug */,
+				2C69C8C41AB9F050003B4694 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 2C69C8711AB9E981003B4694 /* Project object */;
+}

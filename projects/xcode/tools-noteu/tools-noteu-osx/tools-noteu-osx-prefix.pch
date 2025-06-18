@@ -1,0 +1,26 @@
+//
+//  tools-noteu-osx-prefix.pch
+//  tools-noteu
+//
+//  Created by Marcos Ortega on 18/3/15.
+//  Copyright (c) 2015 Nicaragua Binary S.A. All rights reserved.
+//
+
+#ifndef tools_noteu_tools_noteu_osx_prefix_pch
+#define tools_noteu_tools_noteu_osx_prefix_pch
+
+#include "noteuCorePrecomp.h"
+#include "noteuCore.h"
+
+//#define AU_INICIO_PANTALLA_VERTICAL	false	//indica si la pantalla se carga en vertical u horizontal
+//#define AU_USA_ACELEROMETRO
+
+#define LEER_PRECACHE					true		//Archivos binarios generados como parte del paquete
+#define LEER_CACHE						false		//Archivos binarios generados durante una carga anterior y almacenados en la carpeta cache/tmp
+#define ESCRIBIR_CACHE					true		//Archivos binarios generados durante una carga anterior y almacenados en la carpeta cache/tmp
+//
+#define PAQUETES_RUTA_BASE				""
+#define PAQUETES_CARGAR					true
+#define PAQUETES_CARGAR_PRECACHEADOS	false
+
+#endif
