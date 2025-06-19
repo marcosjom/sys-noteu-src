@@ -8,11 +8,11 @@
 
 #import <Cocoa/Cocoa.h>
 #include "nb/core/NBMngrStructMaps.h"
-#include "nb/core/NBMngrThreads.h"
+#include "nb/core/NBMngrProcess.h"
 
 int main(int argc, const char * argv[]) {
 	int r = 0;
-	NBMngrThreads_init();
+    NBMngrProcess_init();
 	NBMngrStructMaps_init();
 	//NBSocket_initEngine();
 	//NBSocket_initWSA();
@@ -45,6 +45,6 @@ int main(int argc, const char * argv[]) {
 	//NBSocket_finishWSA();
 	//NBSocket_releaseEngine();
 	NBMngrStructMaps_release();
-	NBMngrThreads_release();
+    NBMngrProcess_release();
 	return r;
 }

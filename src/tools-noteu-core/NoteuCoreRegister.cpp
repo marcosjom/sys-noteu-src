@@ -20,7 +20,7 @@ UI16 AUIMenu::idTipoClase;
 #endif
 
 NB_METODO_INICIALIZADOR_CUERPO(NoteuCoreRegister){
-	PRINTF_INFO("\n\n+++++++++++++ NoteuCoreRegister +++++++++++++++\n\n");
+    printf("\n\n+++++++++++++ NoteuCoreRegister +++++++++++++++\n\n");
 	NBGestorAUObjetos::registrarClase("AUEditorAtlas", &AUEditorAtlas::idTipoClase);
 	NBGestorAUObjetos::registrarClase("AUEditorMesh", &AUEditorMesh::idTipoClase);
 	NBGestorAUObjetos::registrarClase("AUIListImages", &AUIListImages::idTipoClase);

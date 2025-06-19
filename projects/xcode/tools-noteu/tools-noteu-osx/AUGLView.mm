@@ -19,9 +19,12 @@
 @implementation AUGLView
 
 static CVReturn MyDisplayLinkCallback(CVDisplayLinkRef displayLink, const CVTimeStamp *now, const CVTimeStamp *outputTime, CVOptionFlags flagsIn, CVOptionFlags *flagsOut, void *displayLinkContext){
-	// go back to Obj-C for easy access to instance variables
-	CVReturn result = [(AUGLView*)displayLinkContext getFrameForTime:outputTime];
-	return result;
+    //Note: flag to redraw instead of drawing directly
+    //Run at main thread
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [(AUGLView*)displayLinkContext setNeedsDisplay:YES];
+    });
+    return kCVReturnSuccess;
 }
 
 - (void)awakeFromNib {
@@ -125,14 +128,7 @@ static CVReturn MyDisplayLinkCallback(CVDisplayLinkRef displayLink, const CVTime
 			} else {
 				NBASSERT(_app->indiceEscenaRender() >= 0)
 				const STAppScenasPkgLoadDef packages[] = {
-					//Normal
-					{ "paqDiccionarios.xml", NULL, 0 }
-					, { "paqAnimaciones.xml", NULL, 0 }
-					, { "paqCuerpos.xml", NULL, 0 }
-					, { "paqFuentes.otf", NULL, 0 }
-					, { "paqPNGx64.png", NULL, 0 }
-					, { "paqPNGx32.png", NULL, 0 }
-					, { "paqSonidos.wav", NULL, 0 }
+                    { "dummy-ignore-warning.bin", NULL, 0 }
 				};
 				const SI32 iEscenaRender = _app->indiceEscenaRender();
 				_escenas = new AUAppEscenasAdminSimple(iEscenaRender, ENGestorTexturaModo_cargaInmediata, PAQUETES_RUTA_BASE, packages, (sizeof(packages) / sizeof(packages[0])));
@@ -185,9 +181,11 @@ static CVReturn MyDisplayLinkCallback(CVDisplayLinkRef displayLink, const CVTime
 	// set up the display link
 	CVDisplayLinkCreateWithActiveCGDisplays(&displayLink);
 	CVDisplayLinkSetOutputCallback(displayLink, MyDisplayLinkCallback, self);
-	CGLContextObj cglContext = (CGLContextObj)[[self openGLContext] CGLContextObj];
-	CGLPixelFormatObj cglPixelFormat = (CGLPixelFormatObj)[[self pixelFormat] CGLPixelFormatObj];
-	CVDisplayLinkSetCurrentCGDisplayFromOpenGLContext(displayLink, cglContext, cglPixelFormat);
+    {
+        CGLContextObj cglContext = (CGLContextObj)[[self openGLContext] CGLContextObj];
+        CGLPixelFormatObj cglPixelFormat = (CGLPixelFormatObj)[[self pixelFormat] CGLPixelFormatObj];
+        CVDisplayLinkSetCurrentCGDisplayFromOpenGLContext(displayLink, cglContext, cglPixelFormat);
+    }
 }
 
 - (BOOL) abrirArchivo:(NSString*)rutaArchivo {
@@ -221,8 +219,8 @@ static CVReturn MyDisplayLinkCallback(CVDisplayLinkRef displayLink, const CVTime
 		const NSSize sz				= [[desc objectForKey:NSDeviceSize] sizeValue];
 		//PRINTF_INFO("-----reshape\n  =    cur-sceen-dpi(%f, %f)-size(%f, %f).\n", dpi.width, dpi.height, sz.width, sz.height);
 		const NSRect backingRect	= [curScreen convertRectToBacking:layerBounds];
-		const STNBSize szInchs		= { layerBounds.size.width / dpi.width, layerBounds.size.height / dpi.height };
-		const STNBSize ppi			= { backingRect.size.width / szInchs.width, backingRect.size.height / szInchs.height  }; //pixel-per-inches
+		const STNBSize szInchs		= { (float)(layerBounds.size.width / dpi.width), (float)(layerBounds.size.height / dpi.height) };
+		const STNBSize ppi			= { (float)(backingRect.size.width / szInchs.width), (float)(backingRect.size.height / szInchs.height)  }; //pixel-per-inches
 		//PRINTF_INFO("-----reshape\n  =    szInchs(%.2f, %.2f)-diag(%.2f) cur-sceen-ppi(%f, %f)-size(%f, %f).\n", szInchs.width, szInchs.height, sqrtf((szInchs.width * szInchs.width) + (szInchs.height * szInchs.height)), ppi.width, ppi.height, backingRect.size.width, backingRect.size.height);
 		//
 		NSOpenGLContext *currentContext = [self openGLContext];
@@ -259,25 +257,6 @@ static CVReturn MyDisplayLinkCallback(CVDisplayLinkRef displayLink, const CVTime
 			CGLUnlockContext((CGLContextObj)[currentContext CGLContextObj]);
 		}
 	}
-	//ToDo: remove
-	/*NSSize    viewBounds = [self bounds].size;
-	NSOpenGLContext    *currentContext = [self openGLContext];
-	if([currentContext view] != nil){
-		[currentContext makeCurrentContext];
-		// remember to lock the context before we touch it since display link is threaded
-		CGLLockContext((CGLContextObj)[currentContext CGLContextObj]);
-		// let the context know we've changed size
-		[[self openGLContext] update];
-		//
-		{
-			NBTamanoI screenSz; NBTAMANO_ESTABLECER(screenSz, viewBounds.width, viewBounds.height)
-			NBTamano dpi; NBTAMANO_ESTABLECER(dpi, 0, 0)
-			if(_app != NULL){
-				_app->notificarRedimensionVentana(screenSz, 1.0f, dpi, dpi);
-			}
-		}
-		CGLUnlockContext((CGLContextObj)[currentContext CGLContextObj]);
-	}*/
 }
 
 - (void)drawRect:(NSRect)rect {
@@ -286,11 +265,11 @@ static CVReturn MyDisplayLinkCallback(CVDisplayLinkRef displayLink, const CVTime
 
 - (void)drawFrame {
 	NSOpenGLContext* currentContext = [self openGLContext];
+    // must lock GL context because display link is threaded
+    CGLLockContext((CGLContextObj)[currentContext CGLContextObj]);
 	NSView* view = [currentContext view];
 	if(view != nil){
 		[currentContext makeCurrentContext];
-		// must lock GL context because display link is threaded
-		CGLLockContext((CGLContextObj)[currentContext CGLContextObj]);
 		if(_app != NULL){
 			//Bug en OSX (depende del SDK y el OS):
 			//A veces el frameBuffer es undefined al arancar el App o al cambiar a pantalla completa.
@@ -315,8 +294,8 @@ static CVReturn MyDisplayLinkCallback(CVDisplayLinkRef displayLink, const CVTime
 			}
 		}
 		[currentContext flushBuffer];
-		CGLUnlockContext((CGLContextObj)[currentContext CGLContextObj]);
 	}
+    CGLUnlockContext((CGLContextObj)[currentContext CGLContextObj]);
 }
 
 - (void)dealloc {
@@ -425,8 +404,8 @@ static CVReturn MyDisplayLinkCallback(CVDisplayLinkRef displayLink, const CVTime
 	//NSLog(@"scrollWheel viewPoint(%f, %f) delta(%f, %f) deltaZ(%f): %@.\n", viewPoint.x, viewPoint.y, [theEvent deltaX], [theEvent deltaY], [theEvent deltaZ], theEvent);
 	if(_app != NULL){
 		const float deltaScale	= 5.0f;
-		const STNBPoint posPort	= { (layerPoint.x * sizeScale), (yPosInv * sizeScale) };
-		const STNBSize scrollSz	= { ([theEvent deltaX] * sizeScale * deltaScale), -([theEvent deltaY] * sizeScale * deltaScale)};
+		const STNBPoint posPort	= { (float)(layerPoint.x * sizeScale), (yPosInv * sizeScale) };
+		const STNBSize scrollSz	= { (float)([theEvent deltaX] * sizeScale * deltaScale), (float)-([theEvent deltaY] * sizeScale * deltaScale)};
 		NBGestorTouches::scrollAdd(posPort, scrollSz, FALSE);
 	}
 }
@@ -442,7 +421,7 @@ static CVReturn MyDisplayLinkCallback(CVDisplayLinkRef displayLink, const CVTime
 	//NSLog(@"scrollWheel viewPoint(%f, %f) delta(%f, %f) deltaZ(%f): %@.\n", viewPoint.x, viewPoint.y, [theEvent deltaX], [theEvent deltaY], [theEvent deltaZ], theEvent);
 	if(_app != NULL){
 		//const float deltaScale	= 5.0f;
-		const STNBPoint posPort	= { (layerPoint.x * sizeScale), (yPosInv * sizeScale) };
+		const STNBPoint posPort	= { (float)(layerPoint.x * sizeScale), (yPosInv * sizeScale) };
 		//const STNBSize scrollSz	= { ([theEvent deltaX] * sizeScale * deltaScale), -([theEvent deltaY] * sizeScale * deltaScale)};
 		NBGestorTouches::magnifyAdd(posPort, [theEvent magnification], FALSE);
 	}
@@ -460,7 +439,7 @@ static CVReturn MyDisplayLinkCallback(CVDisplayLinkRef displayLink, const CVTime
 	//NSLog(@"scrollWheel viewPoint(%f, %f) delta(%f, %f) deltaZ(%f): %@.\n", viewPoint.x, viewPoint.y, [theEvent deltaX], [theEvent deltaY], [theEvent deltaZ], theEvent);
 	if(_app != NULL){
 		//const float deltaScale	= 5.0f;
-		const STNBPoint posPort	= { (layerPoint.x * sizeScale), (yPosInv * sizeScale) };
+		const STNBPoint posPort	= { (float)(layerPoint.x * sizeScale), (yPosInv * sizeScale) };
 		//const STNBSize scrollSz	= { ([theEvent deltaX] * sizeScale * deltaScale), -([theEvent deltaY] * sizeScale * deltaScale)};
 		NBGestorTouches::magnifyAdd(posPort, 0.0f, TRUE);
 	}
@@ -1187,113 +1166,6 @@ static CVReturn MyDisplayLinkCallback(CVDisplayLinkRef displayLink, const CVTime
 	}
 	return r;
 }
-
-//ToDo: remove all
-// ------------------------------
-// -- Manejo de eventos de teclado
-// ------------------------------
-
-/*- (void)keyDown:(NSEvent *)theEvent {
-	PRINTF_INFO("Key-down.\n");
-    [self interpretKeyEvents:[NSArray arrayWithObject:theEvent]];
-}
-
-- (void)keyUp:(NSEvent *)theEvent {
-	PRINTF_INFO("Key-up.\n");
-}
-
-- (void)flagsChanged:(NSEvent *)theEvent {
-	PRINTF_INFO("Flag changed.\n");
-	//NSAlternateKeyMask | NSCommandKeyMask
-	/ *if([theEvent modifierFlags] & NSAlternateKeyMask) {
-		NSLog(@"alt is down!!!");
-	} else if([theEvent keyCode] == 58) {
-		NSLog(@"alt is up!!!");
-	}* /
-}
-
-- (void)insertNewline:(id)sender {
-	NBGestorTeclas::entradaLockForBatch();
-	{
-		NBGestorTeclas::entradaIntroducirTexto("\n", false);
-	}
-	NBGestorTeclas::entradaUnlockFromBatch();
-}
-
-- (void)insertTab:(id)sender {
-	NBGestorTeclas::entradaLockForBatch();
-	{
-		NBGestorTeclas::entradaIntroducirTexto("\t", false);
-	}
-	NBGestorTeclas::entradaUnlockFromBatch();
-}
-
-- (void)insertText:(id)aString {
-	NBGestorTeclas::entradaLockForBatch();
-	{
-		NBGestorTeclas::entradaIntroducirTexto([aString UTF8String], false);
-	}
-	NBGestorTeclas::entradaUnlockFromBatch();
-}
-
-- (void)deleteBackward:(id)sender {
-	NBGestorTeclas::entradaLockForBatch();
-	{
-		NBGestorTeclas::entradaBackspace(false);
-	}
-	NBGestorTeclas::entradaUnlockFromBatch();
-}
-
-// ------------------------------
-// -- Manejo de eventos de mouse
-// ------------------------------
-- (BOOL)acceptsFirstResponder {
-    return YES;
-}
-
-
-- (void)mouseDown:(NSEvent *)theEvent {
-	const NSSize viewBounds	= [self bounds].size;
-    const NSPoint curPoint	= [self convertPoint:[theEvent locationInWindow] fromView:nil];
-	const float yPosInv		= (viewBounds.height - curPoint.y);
-	//PRINTF_INFO("mouseDown x(%f) y(%f) - alto(%f) yInv(%f).\n", (float)curPoint.x, (float)curPoint.y, (float)viewBounds.height, (float)yPosInv);
-	if(_app != NULL){
-		if(_mousePresionado) NBGestorTouches::touchFinalizar(1, curPoint.x, yPosInv, false);
-		NBGestorTouches::touchIniciar(1, curPoint.x, yPosInv);
-		_mousePresionado = true;
-	}
-}
-
-- (void)mouseUp:(NSEvent *)theEvent {
-	const NSSize viewBounds	= [self bounds].size;
-    const NSPoint curPoint	= [self convertPoint:[theEvent locationInWindow] fromView:nil];
-	const float yPosInv		= (viewBounds.height - curPoint.y);
-	//PRINTF_INFO("mouseUp x(%f) y(%f) - alto(%f) yInv(%f).\n", (float)curPoint.x, (float)curPoint.y, (float)viewBounds.height, (float)yPosInv);
-	if(_app != NULL){
-		if(_mousePresionado) NBGestorTouches::touchFinalizar(1, curPoint.x, yPosInv, false);
-		_mousePresionado = false;
-	}
-}
-
-- (void)mouseDragged:(NSEvent *)theEvent {
-	const NSSize viewBounds	= [self bounds].size;
-    const NSPoint curPoint	= [self convertPoint:[theEvent locationInWindow] fromView:nil];
-	const float yPosInv		= (viewBounds.height - curPoint.y);
-	//PRINTF_INFO("mouseUp x(%f) y(%f) - alto(%f) yInv(%f).\n", (float)curPoint.x, (float)curPoint.y, (float)viewBounds.height, (float)yPosInv);
-	if(_app != NULL){
-		if(_mousePresionado) NBGestorTouches::touchMover(1, curPoint.x, yPosInv);
-	}
-}
-
-- (void)mouseMoved:(NSEvent *)theEvent {
-	const NSSize viewBounds	= [self bounds].size;
-	const NSPoint curPoint	= [self convertPoint:[theEvent locationInWindow] fromView:nil];
-	const float yPosInv		= (viewBounds.height - curPoint.y);
-	//PRINTF_INFO("mouseUp x(%f) y(%f) - alto(%f) yInv(%f).\n", (float)curPoint.x, (float)curPoint.y, (float)viewBounds.height, (float)yPosInv);
-	if(_app != NULL){
-		NBGestorTouches::hoverMover(1, curPoint.x, yPosInv);
-	}
-}*/
 
 @end
 

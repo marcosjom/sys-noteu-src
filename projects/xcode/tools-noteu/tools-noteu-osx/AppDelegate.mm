@@ -8,10 +8,11 @@
 
 #import "AppDelegate.h"
 
+/*
 @interface AppDelegate ()
-
 @property (assign) IBOutlet NSWindow *window;
 @end
+*/
 
 @implementation AppDelegate
 

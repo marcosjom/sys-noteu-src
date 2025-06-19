@@ -285,6 +285,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -382,11 +383,11 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MACOSX_DEPLOYMENT_TARGET = 11.5;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
-				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)/../../../../../sys-auframework/lib-box2d-src/include $(SRCROOT)/../../../../../sys-nbframework/lib-nbframework-src/include $(SRCROOT)/../../../../../sys-auframework/lib-auframework-src/include $(SRCROOT)/../../../../../sys-auframework/lib-auframework-media-src/include $(SRCROOT)/../../../../../sys-auframework/lib-auframework-app-src/include $(SRCROOT)/../../src/tools-noteu-core";
+				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)/../../../../../sys-auframework/lib-box2d-src/include $(SRCROOT)/../../../../../sys-nbframework/sys-nbframework-src/include $(SRCROOT)/../../../../../sys-auframework/lib-auframework-src/include $(SRCROOT)/../../../../../sys-auframework/lib-auframework-media-src/include $(SRCROOT)/../../../../../sys-auframework/lib-auframework-app-src/include $(SRCROOT)/../../src/tools-noteu-core";
 			};
 			name = Debug;
 		};
@@ -417,10 +418,10 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MACOSX_DEPLOYMENT_TARGET = 11.5;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = macosx;
-				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)/../../../../../sys-auframework/lib-box2d-src/include $(SRCROOT)/../../../../../sys-nbframework/lib-nbframework-src/include $(SRCROOT)/../../../../../sys-auframework/lib-auframework-src/include $(SRCROOT)/../../../../../sys-auframework/lib-auframework-media-src/include $(SRCROOT)/../../../../../sys-auframework/lib-auframework-app-src/include $(SRCROOT)/../../src/tools-noteu-core";
+				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)/../../../../../sys-auframework/lib-box2d-src/include $(SRCROOT)/../../../../../sys-nbframework/sys-nbframework-src/include $(SRCROOT)/../../../../../sys-auframework/lib-auframework-src/include $(SRCROOT)/../../../../../sys-auframework/lib-auframework-media-src/include $(SRCROOT)/../../../../../sys-auframework/lib-auframework-app-src/include $(SRCROOT)/../../src/tools-noteu-core";
 			};
 			name = Release;
 		};
