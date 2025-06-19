@@ -1,12 +1,9 @@
 # Moved to Github
 
-This repository was moved from another service to Github.
+This repository was moved to Github. My original repository has ~7 years of activity from 2016-04-27 to 2023-01-11:
 
-The original repository has activity:
+https://bitbucket.org/nicaraguabinary/sys-noteu-src/
 
-- from  2016-04-27
-- up to 2023-01-11
-  
 # sys-noteu-src
 
 Visual tool for building texture-atlas and stretchable PNG/JPG images:
