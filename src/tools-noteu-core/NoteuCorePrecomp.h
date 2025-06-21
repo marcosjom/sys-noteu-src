@@ -17,4 +17,6 @@
 #include "AUFrameworkMedia.h"
 #include "AUAppNucleo.h"
 
+#define FONT_SIZE_PIX 24
+
 #endif

@@ -22,7 +22,7 @@ AUIMenu::AUIMenu() : AUEscenaContenedor()
 	_animObjetos		= new(this) AUAnimadorObjetoEscena();
 	_limitsSize.ancho	= _limitsSize.alto = 0.0f;
 	//
-	_optionsFont		= NBGestorTexturas::fuenteTextura("Helvetica", 12, true, false); _optionsFont->retener();
+	_optionsFont		= NBGestorTexturas::fuenteTextura("Helvetica", FONT_SIZE_PIX, true, false); _optionsFont->retener();
 	//
 	NBGestorAnimadores::agregarAnimador(this, this);
 }

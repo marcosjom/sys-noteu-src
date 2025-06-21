@@ -342,7 +342,7 @@ void AUIListImages::privListRemoveImageAtIndex(const SI32 iImage, const bool not
 void AUIListImages::privListAddImageAtIndex(const SI32 iImage, AUMapaBits* image, const char* name, const UI8 scaleBase2, const float scaleForHD){
 	NBASSERT(iImage >= 0 && iImage <= _list.conteo)
 	if(iImage >= 0 && iImage <= _list.conteo){
-		AUFuenteTextura* fuente = NBGestorTexturas::fuenteTextura("Helvetica", 12, false, false);
+		AUFuenteTextura* fuente = NBGestorTexturas::fuenteTextura("Helvetica", FONT_SIZE_PIX, false, false);
 		//
 		STIListImagesImage img;
 		img.container	= new(this) AUEscenaContenedor();
@@ -450,7 +450,7 @@ void AUIListImages::privUpdateImageExtraDetailsAtIndex(const SI32 iImage, const 
 			}
 		} else {
 			if(img->txtExtraDetails == NULL){
-				img->txtExtraDetails = new(this) AUEscenaTexto(NBGestorTexturas::fuenteTextura("Helvetica", 12, false, false));
+				img->txtExtraDetails = new(this) AUEscenaTexto(NBGestorTexturas::fuenteTextura("Helvetica", FONT_SIZE_PIX, false, false));
 				img->txtExtraDetails->establecerMultiplicadorColor8(extrasColorNormal.r, extrasColorNormal.g, extrasColorNormal.b, 255);
 				img->container->agregarObjetoEscena(img->txtExtraDetails);
 			}

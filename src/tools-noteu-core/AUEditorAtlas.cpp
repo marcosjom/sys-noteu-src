@@ -49,7 +49,7 @@ AUEditorAtlas::AUEditorAtlas(SI32 iEscena) : AUAppEscena()
 	_layerDrag		= new(this) AUEscenaContenedor();
 	_layerGUI		= new(this) AUEscenaContenedor();
 	//
-	_textEditor		= new(this) AUEscenaTextoEditableOffscreen(NBGestorTexturas::fuenteTextura("Helvetica", 12, false, false), ENTextEditorType_Literal, TRUE);
+	_textEditor		= new(this) AUEscenaTextoEditableOffscreen(NBGestorTexturas::fuenteTextura("Helvetica", FONT_SIZE_PIX, false, false), ENTextEditorType_Literal, TRUE);
 	//
 	//Set drag layer
 	{
@@ -133,7 +133,7 @@ AUEditorAtlas::AUEditorAtlas(SI32 iEscena) : AUAppEscena()
 		_colorPxPos.x = _colorPxPos.y = 0;
 		_colorValue.r = _colorValue.g = _colorValue.b = _colorValue.a = 0;
 		{
-			_colorTxt = new(this) AUEscenaTexto(NBGestorTexturas::fuenteTextura("Helvetica", 12, true, false));
+			_colorTxt = new(this) AUEscenaTexto(NBGestorTexturas::fuenteTextura("Helvetica", FONT_SIZE_PIX, true, false));
 			_colorTxt->establecerAlineaciones(ENNBTextLineAlignH_Left, ENNBTextAlignV_FromBottom);
 			_colorTxt->establecerMultiplicadorColor8(255, 255, 255, 255);
 			_colorTxt->establecerVisible(false);

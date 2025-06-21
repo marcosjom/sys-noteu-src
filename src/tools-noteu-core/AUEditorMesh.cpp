@@ -48,7 +48,7 @@ AUEditorMesh::AUEditorMesh(const SI32 iEscena) : AUAppEscena()
 	_layerPreview	= new(this) AUEscenaContenedor();
 	_layerDrag		= new(this) AUEscenaContenedor();
 	_layerGUI		= new(this) AUEscenaContenedor();
-	_textEditor		= new(this) AUEscenaTextoEditableOffscreen(NBGestorTexturas::fuenteTextura("Helvetica", 12, false, false), ENTextEditorType_Literal, TRUE);
+	_textEditor		= new(this) AUEscenaTextoEditableOffscreen(NBGestorTexturas::fuenteTextura("Helvetica", FONT_SIZE_PIX, false, false), ENTextEditorType_Literal, TRUE);
 	//
 	//Set drag layer
 	{
